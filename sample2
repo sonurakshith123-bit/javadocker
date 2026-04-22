@@ -7,12 +7,12 @@ pipeline {
               sh 'sudo dnf install maven-y'  
             }
         }
-        stage('clean package') {
+        stage('Build') {
             steps {
               sh 'mvn clean package'  
             }
         }
-        stage('artifactts') {
+        stage('relese') {
             steps {
               archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false  
             }
